@@ -4,10 +4,11 @@ const app = express();
 const people = require('./routes/people');
 const auth = require('./routes/auth');
 
+//static assets
 app.use(express.static('./methods-public'));
+//parse from data
 app.use(express.urlencoded({ extended: false }));
-
-//для javascript.html
+//для javascript.html, parse json
 app.use(express.json());
 
 app.use('/api/people', people);
